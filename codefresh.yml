@@ -1,13 +1,13 @@
 version: '1.0'
 steps:
-    build-step:
+    build-image:
         type: build
         image-name: nemd/resilio
         dockerfile: Dockerfile
         tag: latest
 
-    test-all-the-code:
-      image-name: nemd/resilio
-      working-directory: ${{initial-clone}}
-      commands:
-        - ps axf
+  integration-test:
+    composition-candidates:
+      test:
+        image: ${{build-image}}
+        command: ps axf
