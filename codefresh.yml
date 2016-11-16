@@ -6,8 +6,8 @@ steps:
         dockerfile: Dockerfile
         tag: latest
 
-  integration-test:
-    composition-candidates:
-      test:
-        image: ${{build-image}}
-        command: ps axf
+    integration-test:
+      composition-candidates:
+        test:
+          image: ${{build-image}}
+          command: ps axf
