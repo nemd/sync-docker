@@ -6,10 +6,8 @@ steps:
         dockerfile: Dockerfile
         tag: latest
 
-    unit-test:
-        type: composition
-        working-directory: ${{initial-clone}}
-        composition-candidates:
-            test:
-              image: ${{build-step}}
-              command: echo $(date)
+    test-all-the-code:
+      image-name: nemd/resilio
+      working-directory: ${{initial-clone}}
+      commands:
+        - ps axf
