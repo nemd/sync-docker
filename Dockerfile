@@ -3,8 +3,8 @@
 # VERSION               0.1
 #
 
-FROM ubuntu
-MAINTAINER Resilio Inc. <support@resilio.com>
+FROM alpine:3.4
+MAINTAINER Michal <michal@reapnet.io>
 LABEL com.resilio.version="2.4.2"
 
 ADD https://download-cdn.resilio.com/2.4.2/linux-x64/resilio-sync_x64.tar.gz /tmp/sync.tgz

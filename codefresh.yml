@@ -1,0 +1,15 @@
+version: '1.0'
+steps:
+    build-step:
+        type: build
+        image-name: nemd/resilio
+        dockerfile: Dockerfile
+        tag: latest
+
+    unit-test:
+        type: composition
+        working-directory: ${{initial-clone}}
+        composition-candidates:
+            test:
+              image: ${{build-step}}
+              command: echo $(date)
